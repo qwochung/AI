@@ -5,20 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d199e8b7-bc7b-4541-baa2-e87e51bfa6c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LocalSearch/LocalSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LocalSearch/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Project/ProcessingData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Week1/BFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Week1/DFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Week1/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Week2/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex/BFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex/DFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex/Queen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +21,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -49,6 +36,10 @@
     &quot;accountId&quot;: &quot;6c55ffae-dc78-449a-9dc0-dbcfdb5d8139&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -65,14 +56,14 @@
     "Application.LocalSearch.executor": "Run",
     "Application.Main.executor": "Debug",
     "Application.Node.executor": "Run",
-    "Application.ProcessingData.executor": "Debug",
+    "Application.ProcessingData.executor": "Run",
     "Application.ex.Main.executor": "Run",
     "Application.ex.Node.executor": "Debug",
     "Python.NeuralNetwork.executor": "Run",
     "Python.recommendation_system.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/mr.hung/MyDocuments/NLU/AI",
     "node.js.detected.package.eslint": "true",
@@ -96,13 +87,13 @@
       <recent name="Week1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProcessingData">
-    <configuration name="LocalSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LocalSearch.LocalSearch" />
+  <component name="RunManager" selected="Application.Entropy">
+    <configuration name="Entropy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Project.Entropy" />
       <module name="AI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LocalSearch.*" />
+          <option name="PATTERN" value="Project.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Node" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Week2.Node" />
+    <configuration name="LocalSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LocalSearch.LocalSearch" />
       <module name="AI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Week2.*" />
+          <option name="PATTERN" value="LocalSearch.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,6 +175,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Entropy" />
         <item itemvalue="Application.ProcessingData" />
         <item itemvalue="Application.LocalSearch" />
       </list>
@@ -220,7 +212,7 @@
       <workItem from="1729612926009" duration="397000" />
       <workItem from="1730995409591" duration="1849000" />
       <workItem from="1731399162779" duration="1744000" />
-      <workItem from="1732547422346" duration="1470000" />
+      <workItem from="1732547422346" duration="4138000" />
     </task>
     <servers />
   </component>
@@ -232,17 +224,6 @@
     <option featureType="com.intellij.configurationType" implementationName="PythonConfigurationType" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
     <option featureType="com.intellij.configurationType" implementationName="Application" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Project/ProcessingData.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AI$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1729353415606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Project" />
