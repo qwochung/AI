@@ -14,17 +14,20 @@ public class ProcessingData {
         try {
             File file = new File(fileName);
             String[][] result;
+            String[] recommend;
             String line = "";
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             List<String> list = new ArrayList<String>();
             AtomicInteger counter = new AtomicInteger();
             StringTokenizer st;
 
+            String[] title = br.readLine().split(",");
             while ((line = br.readLine()) != null) {
                 st = new StringTokenizer(line,",");
                 if (Integer.parseInt(st.nextToken()) == userId) {
                     String s ="";
                     while (st.hasMoreTokens()) {
+
                         s += st.nextToken() + ",";
                     }
                     list.add(s);
@@ -34,12 +37,13 @@ public class ProcessingData {
             }
             br.close();
 
-            result = new String[list.size()][list.getFirst().length()];
+            result = new String[list.size()+1] [list.getFirst().length()];
+            result[counter.getAndIncrement()] = title;
+
 
             list.forEach(l -> {
                 String[] temp = l.split(",");
-                result[counter.get()] = temp;
-                counter.getAndIncrement();
+                result[counter.getAndIncrement()] = temp;
             });
             return result;
 
@@ -57,8 +61,8 @@ public class ProcessingData {
         System.out.println(Arrays.toString(decision));
 
         for (int i = 1; i < data.length - 1; i++) {
-
             for (int j = 1; j < data.length -1 ; j++) {
+
 //                System.out.println(data[j][i]);
 
             }
