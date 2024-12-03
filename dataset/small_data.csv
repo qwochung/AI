@@ -1,0 +1,20 @@
+userId,genres,noOfRating,ratingLevel,releaseYear,duration,popularity,director,actor,budget,recommended
+1,Sci-Fi,400-600,Medium,New,Short,High,Quentin Tarantino,Tom Hanks,High,Yes
+1,Action,400-600,Medium,New,Long,High,Quentin Tarantino,Tom Hanks,High,Yes
+1,Horror,400-600,High,New,Long,Low,Steven Spielberg,Tom Hanks,Medium,No
+1,Romance,>600,High,Old,Short,Low,Steven Spielberg,Denzel Washington,Medium,No
+1,Drama,<400,Medium,Old,Medium,Low,Martin Scorsese,Denzel Washington,Medium,Yes
+1,Fantasy,>600,High,Old,Short,High,James Cameron,Tom Hanks,High,No
+1,Sci-Fi,>600,Medium,New,Medium,High,Martin Scorsese,Tom Hanks,Medium,Yes
+1,Fantasy,>600,Medium,Old,Short,Medium,Christopher Nolan,Leonardo DiCaprio,Medium,No
+1,Sci-Fi,<400,Low,Old,Long,High,Steven Spielberg,Scarlett Johansson,Medium,No
+1,Sci-Fi,400-600,Medium,New,Medium,Medium,Christopher Nolan,Leonardo DiCaprio,High,Yes
+2,Action,>600,High,Old,Long,High,Christopher Nolan,Tom Hanks,Medium,Yes
+2,Romance,400-600,Medium,Old,Long,Low,James Cameron,Tom Hanks,High,No
+2,Horror,<400,High,New,Short,High,Martin Scorsese,Denzel Washington,Medium,Yes
+2,Drama,>600,Low,New,Long,High,Martin Scorsese,Meryl Streep,High,Yes
+2,Sci-Fi,<400,High,New,Medium,Low,Quentin Tarantino,Denzel Washington,Low,Yes
+2,Fantasy,>600,High,New,Long,High,Christopher Nolan,Denzel Washington,High,Yes
+2,Fantasy,>600,High,New,Short,High,Christopher Nolan,Denzel Washington,High,Yes
+2,Romance,>600,Medium,New,Short,High,Christopher Nolan,Denzel Washington,Low,No
+2,Romance,>600,High,New,Medium,High,Christopher Nolan,Denzel Washington,Medium,No
