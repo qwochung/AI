@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d199e8b7-bc7b-4541-baa2-e87e51bfa6c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/movie_dataset_with_recommendation.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/movies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/movies.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/small_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/small_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/~$small_data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/Entropy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/ProcessingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProcessingData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week2/production/AI/Project/ProcessingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week2/production/AI/Project/ProcessingData.class" afterDir="false" />
-    </list>
+    <list default="true" id="d199e8b7-bc7b-4541-baa2-e87e51bfa6c9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,12 +28,12 @@
     &quot;assignee&quot;: &quot;qwochung&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/qwochung/AI.git",
-    "accountId": "8411fe0b-49c9-4477-877e-c7c3b90a266c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/qwochung/AI.git&quot;,
+    &quot;accountId&quot;: &quot;8411fe0b-49c9-4477-877e-c7c3b90a266c&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -74,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "qhung",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/mr.hung/MyDocuments/NLU/AI",
     "node.js.detected.package.eslint": "true",
