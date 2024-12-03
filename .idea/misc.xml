@@ -3,7 +3,7 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (PyCharmLearningProject)" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" project-jdk-name="graalvm-jdk-21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="graalvm-jdk-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/src/Week2" />
   </component>
 </project>
