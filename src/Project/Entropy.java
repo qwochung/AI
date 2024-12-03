@@ -2,18 +2,30 @@ package Project;
 
 public class Entropy {
 
-    public static double Entropy(int total, int noOfYes, int noOfNo) {
-        double entropy;
-        double yes = (double) noOfYes /total;
-        double no = (double) noOfNo /total;
-        entropy = -( (yes) * (Math.log(yes) / Math.log(2)) )   - ( (no) * (Math.log(no) / Math.log(2)) )  ;
+    public static double calculateEntropy(int total, int noOfYes, int noOfNo) {
+        if (total == 0) {
+            return 0;
+        }
+        double entropy = 0.0;
+
+        double yes = (double) noOfYes / total;
+        double no = (double) noOfNo / total;
+
+
+        if (yes > 0) {
+            entropy -= yes * (Math.log(yes) / Math.log(2));
+        }
+        if (no > 0) {
+            entropy -= no * (Math.log(no) / Math.log(2));
+        }
 
         return entropy;
     }
 
 
+
     public static void main(String[] args) {
-        double entropy = Entropy(10, 6, 4);
+        double entropy = calculateEntropy(10, 6, 4);
         System.out.println(entropy);
     }
 
