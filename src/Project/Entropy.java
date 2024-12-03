@@ -30,7 +30,7 @@ public class Entropy {
 
 
     public static void main(String[] args) {
-        double entropy = Entropy(10, 6, 4);
+        double entropy = calculateEntropy(10, 6, 4);
         System.out.println(entropy);
 
 

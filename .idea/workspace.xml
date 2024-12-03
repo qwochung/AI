@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d199e8b7-bc7b-4541-baa2-e87e51bfa6c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/movie_dataset_with_recommendation.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/movies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/movies.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/small_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/small_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/~$small_data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/Entropy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Function.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Project/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Entropy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project/ProcessingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProcessingData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Week2/production/AI/Project/Entropy.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week2/production/AI/Project/Entropy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Week2/production/AI/Project/Function.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Week2/production/AI/Project/ProcessingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week2/production/AI/Project/ProcessingData.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +35,12 @@
     &quot;assignee&quot;: &quot;qwochung&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/qwochung/AI.git",
-    "accountId": "8411fe0b-49c9-4477-877e-c7c3b90a266c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/qwochung/AI.git&quot;,
+    &quot;accountId&quot;: &quot;8411fe0b-49c9-4477-877e-c7c3b90a266c&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -63,6 +59,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Entropy.executor": "Run",
+    "Application.Gain.executor": "Run",
     "Application.LocalSearch.executor": "Run",
     "Application.Main.executor": "Debug",
     "Application.Node.executor": "Run",
@@ -99,8 +96,34 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.ProcessingData">
+    <configuration name="Entropy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Project.Entropy" />
+      <module name="AI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Function" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Project.Function" />
+      <module name="AI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Gain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Project.Gain" />
       <module name="AI" />
       <extension name="coverage">
         <pattern>
@@ -138,55 +161,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NeuralNetwork" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AI" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/Project" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Project/NeuralNetwork.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="recommendation_system" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AI" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/Project" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Project/recommendation_system.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProcessingData" />
+        <item itemvalue="Application.Gain" />
+        <item itemvalue="Application.Entropy" />
         <item itemvalue="Application.Function" />
         <item itemvalue="Application.LocalSearch" />
       </list>
@@ -225,6 +204,7 @@
       <workItem from="1731399162779" duration="1744000" />
       <workItem from="1732547422346" duration="5663000" />
       <workItem from="1733151175489" duration="6633000" />
+      <workItem from="1733195404524" duration="2146000" />
     </task>
     <servers />
   </component>
@@ -242,18 +222,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Project/ProcessingData.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Project/ProcessingData.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Project/ProcessingData.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="7" />
+          <line>60</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
