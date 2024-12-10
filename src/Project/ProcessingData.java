@@ -1,10 +1,7 @@
 package Project;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProcessingData {
@@ -22,6 +19,7 @@ public class ProcessingData {
             StringTokenizer st;
 
             String[] title = br.readLine().split(",");
+
             while ((line = br.readLine()) != null) {
                 st = new StringTokenizer(line,",");
                 if (Integer.parseInt(st.nextToken()) == userId) {
@@ -32,8 +30,7 @@ public class ProcessingData {
                     }
                     list.add(s);
                 }
-//                if (line.)
-//                list.add(line);
+
             }
             br.close();
 
@@ -58,14 +55,15 @@ public class ProcessingData {
     public static void tree(String [][] data){
         String[] title = data[0];
         String[] decision = data[data.length-1];
-        System.out.println(Arrays.toString(decision));
 
-        for (int i = 1; i < data.length - 1; i++) {
+        Map<String, Integer> counts = new HashMap<>();
+        for (int i = 0; i < data.length - 1; i++) {
+
+
             for (int j = 1; j < data.length -1 ; j++) {
-
-//                System.out.println(data[j][i]);
-
+                System.out.println(data[j][i] + "----" + data[j][data.length-2]);
             }
+            break;
 
 
         }
