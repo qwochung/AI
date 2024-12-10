@@ -4,46 +4,69 @@ import java.util.*;
 
 public class Gain {
 
-    public static double remainder(List<String> dataset, List<List<String>> subsets) {
+
+
+
+    public static double[] informationGain(String[][] data, double entropy, String[] decision) {
+        double[] result = new double[data.length];
+        int index = -1;
+        double gain = -1;
+        int noOfYes = 0;
+        int noOfNo = 0;
+
+        for (int i = 0; i < data.length - 1; i++) {
+
+            String[] col = new String[data.length];
+            for (int j = 1; j < data.length -1 ; j++) {
+                col[j-1] = data[j][i];
+            }
+
+
+            break;
+
+
+
+
+        }
+        return result;
+    }
+
+
+    public static double remainder(String[] col , String[] decision) {
         double remainder = 0.0;
-        int totalSize = dataset.size();
+        int size = col.length;
 
-        // Tính trọng số của mỗi subset dựa trên kích thước của nó
-        for (List<String> subset : subsets) {
-            int noOfYes = Collections.frequency(subset, "Yes");
-            int noOfNo = Collections.frequency(subset, "No");
-            double subsetEntropy = Entropy.calculateEntropy(subset.size(), noOfYes, noOfNo);
+        List<String> item = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            if (!item.contains(col[i])) {
+                item.add(col[i]);
+            }
+        }
 
-            double subsetProbability = (double) subset.size() / totalSize;
-            remainder += subsetProbability * subsetEntropy;
+
+        for (String i : item) {
+            int noOfYes = 0;
+            int noOfNo = 0;
+
+            for (int j = 0; j < decision.length-1; j++) {
+                if (col[j].equals(i) && decision[j].equalsIgnoreCase("yes")) { noOfYes++; }
+                if (col[j].equals(i) && decision[j].equalsIgnoreCase("no")) { noOfNo++; }
+            }
+            int total = noOfYes + noOfNo;
+            double entropyI = Entropy.calculateEntropy(total, noOfYes, noOfNo);
+
+            remainder += ((double)total / (double) size) * entropyI;
         }
 
         return remainder;
     }
 
 
-    public static double informationGain(List<String> dataset, List<List<String>> subsets) {
-        int noOfYes = Collections.frequency(dataset, "Yes");
-        int noOfNo = Collections.frequency(dataset, "No");
 
-
-        double totalEntropy =  Entropy.calculateEntropy(dataset.size(), noOfYes, noOfNo);
-        double remainderValue = remainder(dataset, subsets);
-
-        return totalEntropy - remainderValue;
-    }
 
 
 
     public static void main(String[] args) {
-        List<String> dataset = Arrays.asList("Yes", "No", "Yes", "No", "Yes");
-
-        List<List<String>> subsets = new ArrayList<>();
-        subsets.add(Arrays.asList("Yes", "Yes"));
-        subsets.add(Arrays.asList("No", "No"));
-
-        double ig = informationGain(dataset, subsets);
-        System.out.println("Information Gain: " + ig);
 
     }
 }

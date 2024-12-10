@@ -56,14 +56,26 @@ public class ProcessingData {
         String[] title = data[0];
         String[] decision = data[data.length-1];
 
+
+
         Map<String, Integer> counts = new HashMap<>();
         for (int i = 0; i < data.length - 1; i++) {
 
-
+            String[] col = new String[data.length];
             for (int j = 1; j < data.length -1 ; j++) {
+                col[j-1] = data[j][i];
                 System.out.println(data[j][i] + "----" + data[j][data.length-2]);
+                decision[j-1] = data[j][data.length-2];
             }
+
+            double entropyJ =  (Entropy.calculateEntropy(decision));
+
+//            int root = Gain.informationGain(data, entropyJ, decision);
+            System.out.println(Gain.remainder(col, decision));
+
             break;
+
+
 
 
         }

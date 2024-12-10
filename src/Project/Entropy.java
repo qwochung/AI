@@ -23,10 +23,37 @@ public class Entropy {
     }
 
 
-    public static double remaining(int total, int noOfYes) {
+    public static double calculateEntropy(String[] decision) {
+        int noOfYes = 0;
+        int noOfNo = 0;
+        for (int i = 0; i < decision.length; i++) {
+            if (decision[i].equalsIgnoreCase("yes")) {
+                noOfYes++;
+            }
+            if (decision[i].equalsIgnoreCase("no")) {
+                noOfNo++;
+            }
+        }
 
-        return  0;
+        double entropy = 0.0;
+
+
+        double yes = (double) noOfYes / (noOfYes+noOfNo);
+        double no = (double) noOfNo / (noOfYes+noOfNo);
+
+
+        if (yes > 0) {
+            entropy -= yes * (Math.log(yes) / Math.log(2));
+        }
+        if (no > 0) {
+            entropy -= no * (Math.log(no) / Math.log(2));
+        }
+
+        return entropy;
     }
+
+
+
 
 
     public static void main(String[] args) {
