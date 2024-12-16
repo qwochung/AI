@@ -7,28 +7,22 @@ public class Gain {
 
 
 
-    public static double[] informationGain(String[][] data, double entropy, String[] decision) {
-        double[] result = new double[data.length];
-        int index = -1;
-        double gain = -1;
-        int noOfYes = 0;
-        int noOfNo = 0;
-
-        for (int i = 0; i < data.length - 1; i++) {
+    public static int informationGain(String[][] data, double entropy, String[] decision) {
+        double gain = -1.0;
+        int root = -1;
+        for (int i = 0; i < data.length - 2; i++) {
 
             String[] col = new String[data.length];
             for (int j = 1; j < data.length -1 ; j++) {
                 col[j-1] = data[j][i];
             }
-
-
-            break;
-
-
-
-
+            double IG = entropy - remainder(col, decision);
+            if (IG > gain ) {
+                gain = IG;
+                root = i;
+            }
         }
-        return result;
+        return root ;
     }
 
 
