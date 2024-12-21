@@ -76,6 +76,7 @@ public class ProcessingData {
 
         for (String i : set) {
             String[][] subBranch = getSubBranch(data, i, root);
+            divideTree(subBranch, root(subBranch) );
 
         }
 
