@@ -10,50 +10,69 @@ public class Gain {
     public static int informationGain(String[][] data, double entropy, String[] decision) {
         double gain = -1.0;
         int root = -1;
-        for (int i = 0; i < data.length - 2; i++) {
 
-            String[] col = new String[data.length];
-            for (int j = 1; j < data.length -1 ; j++) {
-                col[j-1] = data[j][i];
+        // Duyệt qua các cột (trừ cột cuối cùng là 'decision')
+        for (int i = 0; i < data[0].length - 1; i++) {
+            String[] col = new String[data.length - 1];
+
+            // Lấy dữ liệu của cột hiện tại
+            for (int j = 1; j < data.length; j++) {
+                col[j - 1] = data[j][i];
             }
+
+            // Kiểm tra nếu cột này không có sự đa dạng
+            Set<String> uniqueValues = new HashSet<>(Arrays.asList(col));
+            if (uniqueValues.size() == 1) {  // Cột chỉ có 1 giá trị
+                continue;  // Bỏ qua cột này vì không có sự phân chia
+            }
+
+            // Tính Information Gain
             double IG = entropy - remainder(col, decision);
-            if (IG > gain ) {
+            if (IG > gain) {
                 gain = IG;
                 root = i;
             }
         }
-        return root ;
+        return root;
     }
 
 
-    public static double remainder(String[] col , String[] decision) {
+
+
+    public static double remainder(String[] col, String[] decision) {
         double remainder = 0.0;
         int size = col.length;
 
         List<String> item = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            if (!item.contains(col[i])) {
+            if (col[i] != null && !item.contains(col[i])) { // Kiểm tra null trước khi thêm vào danh sách
                 item.add(col[i]);
             }
         }
-
 
         for (String i : item) {
             int noOfYes = 0;
             int noOfNo = 0;
 
-            for (int j = 0; j < decision.length-1; j++) {
-                if (col[j].equals(i) && decision[j].equalsIgnoreCase("yes")) { noOfYes++; }
-                if (col[j].equals(i) && decision[j].equalsIgnoreCase("no")) { noOfNo++; }
+            for (int j = 0; j < decision.length; j++) {
+                if (col[j] != null) { // Kiểm tra null trước khi so sánh
+                    if (col[j].equals(i) && decision[j].equalsIgnoreCase("yes")) {
+                        noOfYes++;
+                    } else if (col[j].equals(i) && decision[j].equalsIgnoreCase("no")) {
+                        noOfNo++;
+                    }
+                }
             }
+
             int total = noOfYes + noOfNo;
             double entropyI = Entropy.calculateEntropy(total, noOfYes, noOfNo);
 
-            remainder += ((double)total / (double) size) * entropyI;
+            remainder += ((double) total / (double) size) * entropyI;
         }
 
         return remainder;
     }
+
 
 
 
