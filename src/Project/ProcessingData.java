@@ -8,62 +8,65 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ProcessingData {
 
 
-    public static String[][] processingData(String fileName, int userId) throws FileNotFoundException {
-        try {
-            File file = new File(fileName);
-            String[][] result;
-            String[] recommend;
-            String line = "";
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
-            List<String> list = new ArrayList<String>();
-            AtomicInteger counter = new AtomicInteger();
-            StringTokenizer st;
+    public static String[][] processingData(String fileName) throws FileNotFoundException {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            List<String[]> list = new ArrayList<>();
+            String line;
 
+            // Đọc tiêu đề (header)
             String[] title = br.readLine().split(",");
+            list.add(title);
 
+            // Đọc dữ liệu
             while ((line = br.readLine()) != null) {
-                st = new StringTokenizer(line, ",");
-                if (Integer.parseInt(st.nextToken()) == userId) {
-                    String s = "";
-                    while (st.hasMoreTokens()) {
-
-                        s += st.nextToken() + ",";
-                    }
-                    list.add(s);
-                }
-
+                String[] tokens = line.split(",");
+                list.add(tokens); // Thêm tất cả các hàng vào danh sách
             }
-            br.close();
 
-            result = new String[list.size() + 1][list.getFirst().length()];
-            result[counter.getAndIncrement()] = title;
-
-
-            list.forEach(l -> {
-                String[] temp = l.split(",");
-                result[counter.getAndIncrement()] = temp;
-            });
-            return result;
-
+            return list.toArray(new String[0][]);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
 
+
+//    public static int root(String[][] data) {
+//        String[] title = data[0];
+//        String[] decision = new String[data.length - 1];
+//        int root = -1;
+//
+//        // Cột quyết định (ở cột cuối cùng)
+//        int decisionColumnIndex = data[0].length - 1;
+//
+//        for (int j = 1; j < data.length; j++) {
+//            decision[j - 1] = data[j][decisionColumnIndex];
+//        }
+//
+//        double entropyJ = Entropy.calculateEntropy(decision);
+//        root = Gain.informationGain(data, entropyJ, decision);
+//        System.out.println("Root: " + root);
+//        return root;
+//    }
+
     public static int root(String[][] data) {
         String[] title = data[0];
         String[] decision = new String[data.length - 1];
         int root = -1;
 
-        Map<String, Integer> counts = new HashMap<>();
+        int decisionColumnIndex = data[0].length - 1;
         for (int j = 1; j < data.length; j++) {
-            decision[j - 1] = data[j][data.length - 2];
+            decision[j - 1] = data[j][decisionColumnIndex];
         }
 
-        double entropyJ = (Entropy.calculateEntropy(decision));
+        // In ra các giá trị decision và entropy để kiểm tra
+        System.out.println("Decision values: " + Arrays.toString(decision));
+
+        double entropyJ = Entropy.calculateEntropy(decision);
+        System.out.println("Calculated entropy: " + entropyJ);
+
         root = Gain.informationGain(data, entropyJ, decision);
-        System.out.println("Root: " + root);
+        System.out.println("Current root (calculated): " + root);
         return root;
     }
 
@@ -71,58 +74,66 @@ public class ProcessingData {
     public static void divideTree(String[][] data, int root) {
         String[] title = data[0];
         String[] col = getCol(data, root);
-        Set<String> set = new HashSet<>();
-        set.addAll(Arrays.asList(col));
+        Set<String> set = new HashSet<>(Arrays.asList(col));
 
-        for (String i : set) {
-            String[][] subBranch = getSubBranch(data, i, root);
-            divideTree(subBranch, root(subBranch) );
-
+        // Nếu không có sự phân chia, dừng lại
+        if (set.size() <= 1) {
+            return;
         }
 
+        for (String key : set) {
+            String[][] subBranch = getSubBranch(data, key, root);
 
+            int newRoot = root(subBranch);
+
+
+            if (newRoot == -1 || subBranch.length <= 1) {
+                System.out.println("No further division possible for key: " + key);
+                continue;
+            }
+
+            System.out.println("Sub-branch root: " + newRoot);
+            divideTree(subBranch, newRoot);
+        }
     }
+
+
 
     private static String[][] getSubBranch(String[][] data, String key, int index) {
         String[][] result;
         int len = 0;
+
         for (int i = 1; i < data.length; i++) {
-            if (data[i][index].equalsIgnoreCase(key)) {
+            if (data[i][index] != null && data[i][index].equalsIgnoreCase(key)) {
                 len++;
             }
         }
-        // Tính size của sub branch
-        result = new String[len+1][data[0].length -1];
 
-        for (int i = 0; i < data[0].length -1; i++) {
-            if (i!=index) {
+        result = new String[len + 1][data[0].length - 1];
+
+
+        for (int i = 0; i < data[0].length - 1; i++) {
+            if (i != index) {
                 result[0][i] = data[0][i];
             }
         }
 
-        // Fill data cho sub Branch
+
         int pos = 1;
-        boolean isUpdate = false;
-        for (int j = 0; j < data[0].length ; j++) {
-
-            if (data[j][index].equalsIgnoreCase(key)) {
-
-                for (int k = 0; k < data[0].length -1; k++) {
+        for (int j = 1; j < data.length; j++) {
+            if (data[j][index] != null && data[j][index].equalsIgnoreCase(key)) {
+                for (int k = 0; k < data[0].length - 1; k++) {
                     if (k != index) {
                         result[pos][k] = data[j][k];
-                        isUpdate = true;
                     }
                 }
-
-            }
-
-            if (isUpdate) {
                 pos++;
-                isUpdate = false;
             }
         }
+
         return result;
     }
+
 
 
     public static String[] getCol(String[][] data, int index) {
@@ -136,9 +147,9 @@ public class ProcessingData {
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        String[][] data = processingData("dataset/small_data.csv", 1);
+        String[][] data = processingData("AI/dataset/small_data.csv");
 
         divideTree(data, root(data));
-        divideTree(data, root(data));
+
     }
 }
