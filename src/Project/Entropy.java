@@ -57,10 +57,6 @@ public class Entropy {
     }
 
 
-
-
-
-
     public static void main(String[] args) {
 //        double entropy = calculateEntropy(10, 6, 4);
 //        System.out.println(entropy);

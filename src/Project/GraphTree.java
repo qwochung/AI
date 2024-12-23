@@ -10,25 +10,6 @@ import static Project.Gain.informationGain;
 
 public class GraphTree {
 
-    // Định nghĩa lớp Node để xây dựng cấu trúc cây
-    public static class Node {
-        int index;
-        String value; // Giá trị quyết định của node
-        boolean isLeaf; // Kiểm tra nếu là lá cây (Yes/No)
-        List<Node> next; // Danh sách các nhánh con
-
-        public Node(int index, String value, boolean isLeaf) {
-            this.index = index;
-            this.value = value;
-            this.isLeaf = isLeaf;
-            this.next = new ArrayList<>();
-        }
-
-        public void addChild(Node child) {
-            next.add(child);
-        }
-    }
-
     // Định nghĩa lớp TreePanel để vẽ cây quyết định
     // Định nghĩa lớp TreePanel để vẽ cây quyết định
     public static class TreePanel extends JPanel {
@@ -60,7 +41,7 @@ public class GraphTree {
 
         private void drawNode(Graphics2D g2d, Node node, int x, int y, int xOffset) {
             // Màu sắc và đường viền của nút
-            Color nodeColor = node.isLeaf ? (node.value.contains("Yes") ? new Color(76, 175, 80) : new Color(244, 67, 54)) : new Color(100, 181, 246);
+            Color nodeColor = node.isSuggest ? (node.value.contains("Yes") ? new Color(76, 175, 80) : new Color(244, 67, 54)) : new Color(100, 181, 246);
             Color borderColor = new Color(33, 150, 243);
 
             // Vẽ bóng
@@ -165,7 +146,7 @@ public class GraphTree {
             List<String[]> subData = entry.getValue();
 
             if (isPure(subData)) {
-                root.addChild(new Node(-1, key + subData.get(0)[data[0].length - 1], true));
+                root.addChild(new Node(-1, key +"->" + subData.get(0)[data[0].length - 1], true));
             } else {
                 String[][] subArray = new String[subData.size() + 1][data[0].length];
                 subArray[0] = data[0];

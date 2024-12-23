@@ -50,6 +50,12 @@ public class ProcessingData {
 //    }
 
     public static int root(String[][] data) {
+
+        if (data == null || data.length <= 1 || data[0].length == 0) {
+            System.out.println("Dữ liệu không hợp lệ hoặc rỗng");
+            return -1;  // Trả về -1 nếu dữ liệu không hợp lệ
+        }
+
         String[] title = data[0];
         String[] decision = new String[data.length - 1];
         int root = -1;
@@ -72,6 +78,11 @@ public class ProcessingData {
 
 
     public static void divideTree(String[][] data, int root) {
+
+        if (data == null || data.length <= 1 || root == -1) {
+            return;  // Nếu dữ liệu không hợp lệ, dừng lại
+        }
+
         String[] title = data[0];
         String[] col = getCol(data, root);
         Set<String> set = new HashSet<>(Arrays.asList(col));
