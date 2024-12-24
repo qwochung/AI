@@ -11,12 +11,11 @@ import static Project.Gain.informationGain;
 public class GraphTree {
 
     // Định nghĩa lớp TreePanel để vẽ cây quyết định
-    // Định nghĩa lớp TreePanel để vẽ cây quyết định
     public static class TreePanel extends JPanel {
         Node root; // Gốc của cây
         int nodeRadius = 20; // Kích thước của một node
-        int verticalSpacing = 70; // Khoảng cách dọc giữa các tầng của cây
-        int horizontalSpacing = 50; // Khoảng cách ngang giữa các node cùng tầng
+        int verticalSpacing = 80; // Khoảng cách dọc giữa các tầng của cây
+        int horizontalSpacing = 62; // Khoảng cách ngang giữa các node cùng tầng
         int treeWidth = 0; // Chiều rộng ước tính của cây
 
         public TreePanel(Node root) {
@@ -115,9 +114,6 @@ public class GraphTree {
         }
     }
 
-
-
-
     public static Node buildTree(String[][] data) {
 
         String[] decision = new String[data.length - 1];
@@ -146,7 +142,7 @@ public class GraphTree {
             List<String[]> subData = entry.getValue();
 
             if (isPure(subData)) {
-                root.addChild(new Node(-1, key +"->" + subData.get(0)[data[0].length - 1], true));
+                root.addChild(new Node(-1, data[0][rootIndex] + "=" + key + subData.get(0)[data[0].length - 1], true));
             } else {
                 String[][] subArray = new String[subData.size() + 1][data[0].length];
                 subArray[0] = data[0];
@@ -154,8 +150,9 @@ public class GraphTree {
                     subArray[i + 1] = subData.get(i);
                 }
 
-
-                root.addChild(buildTree(subArray));
+                Node child = buildTree(subArray);
+                child.value = data[0][rootIndex] + "=" + key;
+                root.addChild(child);
             }
         }
 
@@ -172,7 +169,6 @@ public class GraphTree {
         }
         return true;
     }
-
 
     // Hàm chính
     public static void main(String[] args) throws FileNotFoundException {
