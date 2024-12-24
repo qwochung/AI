@@ -22,7 +22,7 @@ public class MovieRecommendationUI extends JFrame {
     private static final Random random = new Random();
 
     public static void main(String[] args) {
-        String filePath = "AI/dataset/small_data.csv"; // Đường dẫn file thực tế
+        String filePath = "AI/dataset/small_data.csv";
         String[][] data = readDataAsArray(filePath);
         if (data != null) {
             calculateDecisionTree(data);
@@ -45,7 +45,7 @@ public class MovieRecommendationUI extends JFrame {
             JPanel headerPanel = new JPanel(new BorderLayout());
             headerPanel.setPreferredSize(new Dimension(1200, 80));
             headerPanel.setBackground(new Color(40, 40, 40)); // Nền tối
-            headerPanel.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(212, 212, 212))); // Viền sáng
+            headerPanel.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(255, 255, 255))); // Viền sáng
 
             JLabel titleLabel = new JLabel("Luxury Movie Recommendation", SwingConstants.CENTER);
             titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 28));
@@ -59,7 +59,7 @@ public class MovieRecommendationUI extends JFrame {
             filterPanel.setPreferredSize(new Dimension(1200, 120));
             filterPanel.setBackground(new Color(50, 50, 50)); // Nền tối cho bộ lọc
             filterPanel.setBorder(BorderFactory.createTitledBorder(
-                    BorderFactory.createLineBorder(new Color(126, 122, 122), 2), // Độ dày viền là 2
+                    BorderFactory.createLineBorder(new Color(255, 255, 255), 4), // Độ dày viền là 2
                     "Filters",
                     0,
                     0,
@@ -235,6 +235,8 @@ public class MovieRecommendationUI extends JFrame {
         return filteredMovies;
     }
 
+
+
     private static void calculateDecisionTree(String[][] data) {
         String[][] dataCopy = deepCopy(data);
 
@@ -262,6 +264,7 @@ public class MovieRecommendationUI extends JFrame {
         }
 
     }
+
 
     private static String[][] deepCopy(String[][] original) {
         if (original == null) return null;

@@ -12,7 +12,7 @@ public class Gain {
         int root = -1;
 
         // Duyệt qua các cột (trừ cột cuối cùng là 'decision')
-        for (int i = 0; i < data[0].length - 1; i++) {
+        for (int i = 1; i < data[0].length - 1; i++) {
             String[] col = new String[data.length - 1];
 
             // Lấy dữ liệu của cột hiện tại
@@ -44,7 +44,7 @@ public class Gain {
         int size = col.length;
 
         List<String> item = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i < size; i++) {
             if (col[i] != null && !item.contains(col[i])) { // Kiểm tra null trước khi thêm vào danh sách
                 item.add(col[i]);
             }
@@ -54,7 +54,7 @@ public class Gain {
             int noOfYes = 0;
             int noOfNo = 0;
 
-            for (int j = 0; j < decision.length; j++) {
+            for (int j = 1; j < decision.length; j++) {
                 if (col[j] != null) { // Kiểm tra null trước khi so sánh
                     if (col[j].equals(i) && decision[j].equalsIgnoreCase("yes")) {
                         noOfYes++;
